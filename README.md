@@ -1,7 +1,7 @@
 # dnd-outdoor
 
 
-## Frontend
+## Backend
 ```bash
 cd backend
 fastapi dev main.py
