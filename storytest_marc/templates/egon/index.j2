@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>EGON</h1>
+<img src="{{ url_for('static', path='asdj4.jpg') }}" width=200px>
+<p>Egon greets you: "Hello {{ store.hero_get('name') }}!"</p>
+
+<div hidden>
+{{ store.hero_set('egon_visited', store.hero_get('egon_visited', 0) + 1) }}
+</div>
+
+<p>You visited me {{ store.hero_get('egon_visited', 0) }} times</p>
+
+{% if store.hero_get('egon_visited', 0) > 2 %}
+<p>THAT's ENOUGH!</p>
+{% endif %}
+
+{% endblock %}
