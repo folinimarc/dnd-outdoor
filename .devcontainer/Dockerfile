@@ -1,5 +1,8 @@
 FROM python:3.12-bullseye
 
+# Add the local bin directory to PATH (to make fastapi command available)
+ENV PATH="/root/.local/bin:${PATH}"
+
 ######
 # Install node
 ######
