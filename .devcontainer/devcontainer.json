@@ -14,14 +14,15 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install --user -r requirements.txt",
+	"postCreateCommand": "pip install --user -r backend/requirements.txt",
 
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"ms-python.python",
-				"github.copilot"
+				"github.copilot",
+				"wyattferguson.jinja2-snippet-kit"
 			]
 		}
 	}
