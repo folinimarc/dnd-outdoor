@@ -1,20 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.tsx
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AllLocations, { LocationData } from './components/AllLocations';
+import LocationDetail from './components/LocationDetail'; // This component will display details for a single location
 
-function App() {
+const locationsData: LocationData[] = [
+    { id: 1, title: 'Tempel', description: 'Ein Tempel der die alten Essiggurken-Götter verehrt. ' },
+    { id: 2, title: 'Egons Hütte', description: 'Eine schäbige Hütte mit einem Zwerg namens Egon davor.' },
+    // add more locations as needed
+];
 
-  return (
-    <>
-      <h1>Dnd Outdoor go brrrr...</h1>
-      <div className="card">
-        <p>
-          Huiuiuiui...
-        </p>
-      </div>
-    </>
-  )
-}
+const App: React.FC = () => {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<AllLocations locations={locationsData} />} />
+                <Route path="/locations/:id" element={<LocationDetail />} />
+            </Routes>
+        </BrowserRouter>
+    );
+};
 
-export default App
+export default App;
